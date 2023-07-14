@@ -1,0 +1,587 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    /* font-family: HelveticaNeue,Helvetica Neue,helvetica,Sans-Serif; */
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.main{
+    position: relative;
+}
+.main>img{
+    position: absolute;
+    height: 170vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* utility classes  */
+
+.flex-container{
+    display: flex;
+    height: 100%;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: .5px solid #363232;
+    background-image: url("https://static.wixstatic.com/media/c837a6_eb322a4179e54d788eef6896e67f05d0~mv2.jpg/v1/fill/w_469,h_692,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c837a6_eb322a4179e54d788eef6896e67f05d0~mv2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-right: 0px solid transparent;
+    flex-basis: 50%;
+}
+.right{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .5px solid #363232;
+}
+
+
+
+/* navigation css */
+
+nav{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 70px;
+    padding-top: 20px;
+    background-color: #131517;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo svg{
+    height: 30px;
+    color: #fff;
+    /* border: 2px solid red; */
+    width: 40px;
+    margin-right: 5px;
+}
+.logo p{
+    font-size: 25px;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 45%;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.navlist ul li{
+    display: inline-block;
+    margin-right: 30px;
+    text-transform: capitalize;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+.navlist ul li:hover{
+    color: #FD6262;
+}
+.navbtn{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.navbtn .logbtn a{
+    font-size: 16px;
+    margin: 0 10px;
+    margin-right: 20px;
+    color: #FD6262;
+}
+.navbtn .logbtn a:hover{
+    color: #f52929;
+}
+.btn{
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #fff;
+    font-size: 15px;
+    padding: 13px 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+.btn:hover{
+    background-color: #889CE7;
+    border: 1px solid transparent;
+    color: black;
+}
+
+.page1{
+    height: 150vh;
+    width: 100%;
+    padding: 30px 70px;
+    padding-top: 90px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+.page1 h1{
+    font-size: 82px;
+    width: 55%;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.page1 h2{
+    font-size: 30px;
+    font-weight: 300;
+    width: 35%;
+    line-height: 40px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+.page1 button{
+    width: 150px;
+    height: 60px;
+    padding: 0 0;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #FD6262;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.page1 button:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+}
+
+/* page2 csss */
+
+.page2{
+    height: 100vh;
+    background-color: #141416;
+    padding-inline: 70px;
+    position: relative;
+}
+.page2 .flex-container{
+    position: absolute;
+    top: -15%;
+}
+.page2 .flex-container .left{
+    flex-basis: 40%;
+    padding: 160px 60px;
+    padding-left: 120px;
+}
+.page2 .flex-container .left h4{
+    font-size: 30px;
+    font-weight: 300;
+    width: 70%;
+    margin-bottom: 30px;
+    line-height: 43px;
+}
+.page2 .flex-container .left p{
+    font-size: 16px;
+    font-weight: 200;
+    width: 74.5%;
+    line-height: 25px;
+    color: #8d8f91;
+}
+.page2 .flex-container .right{
+    position: relative;
+    padding: 10px;
+    background-color: #141416;
+    flex-basis: 60%;
+}
+.card{
+    position: absolute;
+    height: 350px;
+    width: 230px;
+    background-color: #1B1C1E;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card::after{
+    position: absolute;
+    content: "";
+    bottom: 8%;
+    left: 13%;
+    width: 78%;
+    /* border: 1px solid red; */
+    background-color: #343845;
+    height: 4px;
+    border-radius: 5px;
+}
+.card svg{
+    width: 50px;
+    height: 50px;
+}
+.card h4{
+    color: #889CE7;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 15px;
+    margin-top: 75px;
+}
+.card p{
+    font-size: 14px;
+    color: #8d8f91;
+    line-height: 20px;
+}
+#card1{
+    top: -15%;
+    left: 20%;
+}
+#card2{
+    top: 10%;
+    left: calc(20% + 250px);
+}
+#card3{
+    top: calc(370px - 15%);
+    left: 20%;
+}
+#card4{
+    top: calc(10% + 370px);
+    left: calc(20% + 250px);
+}
+
+/* page3 css */
+
+.page3{
+    height: 135vh;
+    background-color: #141416;
+    padding: 10px 70px;
+    padding-top: 100px;
+    /* border: 1px solid red; */
+}
+.page3 .left{
+    background-image: url("https://static.wixstatic.com/media/c837a6_41aece62e57346379d12018aece18ea2~mv2.jpg/v1/fill/w_488,h_976,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_41aece62e57346379d12018aece18ea2~mv2.jpg");
+    padding-inline: 100px;
+    text-align: center;
+}
+.page3 .left h1{
+    font-weight: 400;
+    line-height: 43px;
+}
+.page3 .right{
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-inline: 100px;
+    padding-left: 120px;
+    padding-top: 120px;
+}
+.page3 .right p{
+    font-size: 16px;
+    line-height: 33px;
+    margin-bottom: 30px;
+    color: #8d8f91;
+    width: 85%;
+}
+
+.page3 button{
+    width: 150px;
+    height: 60px;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #FD6262;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-left: -250px;
+}
+.page3 button:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+}
+
+/* page4 css */
+
+.page4{
+    height: 55vh;
+    background-color: #141316;
+    padding: 10px 70px;
+    padding-top: 95px;
+    text-align: center;
+    /* border: 1px solid red; */
+
+}
+.page4>h1{
+    font-weight: 500;
+}
+.page4 .card{
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    width: 200px;
+    margin-top: 40px;
+    height: 170px;
+    box-shadow: none;
+    background-color: #141316;
+    /* padding-top: 10px; */
+    /* border: 1px solid red; */
+}
+.page4 .card h1{
+    font-size: 55px;
+    font-weight: 500;
+    color: #FD6262;
+    margin-bottom: 15px;
+}
+.page4 .card p{
+    text-transform: capitalize;
+}
+
+/* page5 css */
+
+.page5{
+    height: 150vh;
+    position: relative; 
+    background-color: #141316;
+    padding: 10px 70px;
+}
+.page5 .cards{
+    display: flex;
+    border: .5px solid #363232;
+    /* margin-bottom: 1px; */
+    height: 200px;
+    overflow: hidden;
+    border-right: 0 solid transparent;
+}
+.page5 .cards .card{
+    position: relative;
+    display: inline-block;
+    flex-basis: 25%;
+    margin: 0;
+    height: 200px;
+    box-shadow: none;
+    background-color: #141316;
+    border-radius: 0;
+    border-right: 1px solid #363232;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    /* border: 1px solid white; */
+}
+.page5 .cards .card h1{
+    font-weight: 600;
+    color: #363232;
+}
+.page5 .cards .card:nth-child(1) h1{
+    font-weight: 600;
+    color: #fff;
+}
+.page5 .cards .card:after{
+    display: none;
+}
+.page5 .flex-container{
+    overflow: hidden;
+    height: 78%;
+    /* border: 1px solid red; */
+}
+.page5 .left{
+    background-image: url("https://static.wixstatic.com/media/c837a6_41aece62e57346379d12018aece18ea2~mv2.jpg/v1/fill/w_488,h_976,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_41aece62e57346379d12018aece18ea2~mv2.jpg");
+    padding-inline: 100px;
+    text-align: center;
+    flex-basis: 60%;
+    overflow: hidden;
+}
+.page5 .left h1{
+    font-weight: 400;
+    line-height: 43px;
+    width: 70%;
+}
+.page5 .right{
+    flex-basis: 40%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.page5 .right p{
+    font-size: 16px;
+    line-height: 33px;
+    margin-bottom: 30px;
+    color: #8d8f91;
+    width: 55%;
+    margin-top: 250px;
+}
+
+.page5 button{
+    width: 150px;
+    height: 60px;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #FD6262;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-left: -150px;
+}
+.page5 button:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+}
+
+
+/* page6 css */
+
+
+.page6{
+    background-color: #141416;
+    height: 70vh;
+    /* border: 1px solid white; */
+    padding-top: 10px 70px;
+
+}
+.page6 .cards{
+    display: flex;
+    /* border: .5px solid #363232; */
+    height: 100%;
+    overflow: hidden;
+    /* border-right: 0 solid transparent; */
+}
+.page6 .cards .card{
+    position: relative;
+    display: inline-block;
+    flex-basis: 25%;
+    margin: 0;
+    height: 100%;
+    box-shadow: none;
+    background-color: #141316;
+    border-radius: 0;
+    /* border: 1px solid #363232; */
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.page6 .cards .card:after{
+    display: none;
+}
+.page6 .cards .card p {
+    margin-block: 8px;
+    font-size: 20px;
+    margin-left: 20px;
+    color: #8d8f91;
+}
+.page6 .cards .card .logo{
+    margin: 20px;
+}
+.page6 .cards .card .logo p{
+    color: #fff;
+    margin: 0;
+}
+.card svg{
+    width: 35px;
+    height:35px;
+    /* border: 1px solid red; */
+}
+.page6 .cards .card2{padding-top: 40px;}
+.page6 .cards .card2 p{
+ /* justify-content: center;    */
+ /* align-items: center; */
+    margin-left: 110px;
+    margin-bottom: 25px;
+}
+.card2 button{
+    width: 120px;
+    /* padding: 50px; */
+    height: 55px;
+    margin-top: 20px0;
+    margin-left: 110px;
+    color: black;
+    border: 1px solid transparent;
+    background-color: #FD6262;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.card2 button:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+}
+.page6 .cards .card3,
+.page6 .cards .card4{
+    padding: 45px 1px;
+    padding-left: 85px;
+    align-items: left;
+    overflow: auto;
+}
+.page6 .cards .card3 p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    /* width: 100%; */
+    /* border: 1px solid red; */
+    margin: 0;
+    margin-bottom: 20px;
+}
+.card3 form{
+    display: flex;
+    flex-direction: column;
+    /* width: 80%; */
+}
+label{
+    margin-bottom: 15px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #757373;
+}
+input{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #757373;
+    margin: 20px 0px;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 15px;
+    margin-top: 9px;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+input:hover{
+    border: 1px solid #fff;
+}
+.page6 .cards .card3 form button{
+    width: 120px;
+    height: 55px;
+    border: 1px solid #757373;
+    color: #757373;
+    font-size: 16px;
+}
+.page6 .cards .card4 ul li{
+    display: inline-block;
+}
+.page6 .cards .card4 .mediaWrapper p,
+.page6 .cards .card4 .copyright p{
+    margin: 1px 0;
+    font-size: 18px;
+}
+.page6 .cards .card4 .copyright,
+.page6 .cards .card4 .mediaWrapper{
+    width: 58%;
+    margin-top: 150px;
+    margin-left: 70px;
+}
+.page6 .cards .card4 .mediaWrapper{
+    margin-top: 0;
+}
+.page6 .cards .card4 .mediaWrapper p{
+    margin-bottom: 10px;
+}
+.page6 .cards .card4 .mediaWrapper img{
+    width: 25px;
+    margin-right: 5px;
+}
